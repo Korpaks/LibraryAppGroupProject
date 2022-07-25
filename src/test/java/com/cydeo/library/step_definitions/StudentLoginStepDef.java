@@ -44,8 +44,7 @@ public class StudentLoginStepDef {
     public void verify_that_there_are_models_on_the_page(Integer numberOfModules) {
         wait.until(ExpectedConditions.visibilityOf(basePage.booksLink));
         wait.until(ExpectedConditions.visibilityOf(basePage.borrowedBookCount));
-    Assert.assertTrue(basePage.booksLink.isDisplayed());
-    Assert.assertTrue(basePage.borrowedBookCount.isDisplayed());
+        Assert.assertEquals((int) numberOfModules, basePage.studentModuleNum.size());
     }
 
 
