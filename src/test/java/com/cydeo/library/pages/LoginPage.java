@@ -20,6 +20,12 @@ public class LoginPage {
     @FindBy(xpath = "//button")
     public WebElement signinBtn;
 
+    @FindBy(xpath = "//span[.='Books']")
+    public WebElement books;
+
+    @FindBy(xpath = "//span[.='Borrowing Books']")
+    public WebElement BorrowingBooks;
+
     public void loginStudent(){
         emailInput.sendKeys("student1@library");
         passwordInput.sendKeys("d5fv9BtX");
