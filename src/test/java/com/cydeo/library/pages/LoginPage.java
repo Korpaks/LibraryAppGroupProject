@@ -1,5 +1,6 @@
 package com.cydeo.library.pages;
 
+import com.cydeo.library.utilities.ConfigurationReader;
 import com.cydeo.library.utilities.Driver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -20,18 +21,21 @@ public class LoginPage {
     @FindBy(xpath = "//button")
     public WebElement signinBtn;
 
-    @FindBy(xpath = "//span[.='Books']")
-    public WebElement books;
-
-    @FindBy(xpath = "//span[.='Borrowing Books']")
-    public WebElement BorrowingBooks;
+    public void loginToPage(String url, String username, String password){
+        Driver.getDriver().get(ConfigurationReader.getProperty(url));
+        emailInput.sendKeys(username);
+        passwordInput.sendKeys(password);
+        signinBtn.click();
+    }
 
     public void loginStudent(){
+        Driver.getDriver().get(ConfigurationReader.getProperty("env"));
         emailInput.sendKeys("student1@library");
         passwordInput.sendKeys("d5fv9BtX");
         signinBtn.click();
     }
     public void loginLibrarian(){
+        Driver.getDriver().get(ConfigurationReader.getProperty("env"));
         emailInput.sendKeys("librarian1@library");
         passwordInput.sendKeys("qU9mrvur");
         signinBtn.click();
