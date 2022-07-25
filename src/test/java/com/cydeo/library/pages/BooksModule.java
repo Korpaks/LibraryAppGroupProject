@@ -27,6 +27,5 @@ public class BooksModule {
     @FindBy(xpath = "//input[@name='author']")
     public WebElement addAuthor_input;
 
-    Select select = new Select()
 
 }
