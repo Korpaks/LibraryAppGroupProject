@@ -1,6 +1,7 @@
 package com.cydeo.library.pages;
 
 import com.cydeo.library.utilities.Driver;
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -31,7 +32,13 @@ public class BooksModule {
     @FindBy(id = "book_group_id")
     public WebElement addBookCategory_dropdown;
 
-    Select selectObj = new Select(Driver.getDriver().findElement(By.id("book_group_id")));
+    @FindBy(id = "description")
+    public WebElement bookDescription_input;
+
+    @FindBy(xpath = "//button[@type='submit']")
+    public WebElement submitBookBtn;
+
+
 
 
 }
