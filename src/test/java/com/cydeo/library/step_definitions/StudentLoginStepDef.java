@@ -1,5 +1,6 @@
 package com.cydeo.library.step_definitions;
 
+import com.cydeo.library.pages.BasePage;
 import com.cydeo.library.pages.LoginPage;
 import com.cydeo.library.utilities.ConfigurationReader;
 import com.cydeo.library.utilities.Driver;
@@ -15,6 +16,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class StudentLoginStepDef {
 
     LoginPage loginPage = new LoginPage();
+    BasePage basePage = new BasePage();
     WebDriverWait wait = new WebDriverWait(Driver.getDriver(),10);
 
 
@@ -24,8 +26,8 @@ public class StudentLoginStepDef {
     }
 
     @Then("verify that the URL is {string}")
-    public void verify_that_the_url_is(String string) {
-    Assert.assertEquals("https://library2.cybertekschool/login.html", Driver.getDriver().getCurrentUrl());
+    public void verify_that_the_url_is(String url) {
+    Assert.assertEquals(url, Driver.getDriver().getCurrentUrl());
     }
 
     @When("student enters valid email address and password")
@@ -39,11 +41,11 @@ public class StudentLoginStepDef {
     }
 
     @Then("verify that there are {int} models on the page")
-    public void verify_that_there_are_models_on_the_page(Integer int1) {
-        wait.until(ExpectedConditions.visibilityOf(loginPage.books));
-        wait.until(ExpectedConditions.visibilityOf(loginPage.BorrowingBooks));
-    Assert.assertTrue(loginPage.books.isDisplayed());
-    Assert.assertTrue(loginPage.BorrowingBooks.isDisplayed());
+    public void verify_that_there_are_models_on_the_page(Integer numberOfModules) {
+        wait.until(ExpectedConditions.visibilityOf(basePage.booksLink));
+        wait.until(ExpectedConditions.visibilityOf(basePage.borrowedBookCount));
+    Assert.assertTrue(basePage.booksLink.isDisplayed());
+    Assert.assertTrue(basePage.borrowedBookCount.isDisplayed());
     }
 
 
