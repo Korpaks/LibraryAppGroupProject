@@ -1,4 +1,6 @@
 package com.cydeo.library.step_definitions;
 
-public class StepDef {
+public class StepDef
+{
+
 }
