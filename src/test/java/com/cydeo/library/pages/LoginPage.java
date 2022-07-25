@@ -6,7 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class LoginPage extends BasePage{
+public class LoginPage {
 
     public LoginPage(){
         PageFactory.initElements(Driver.getDriver(),this);
@@ -27,6 +27,18 @@ public class LoginPage extends BasePage{
         passwordInput.sendKeys(password);
         signinBtn.click();
     }
+
+    public void loginStudent(){
+        emailInput.sendKeys("student1@library");
+        passwordInput.sendKeys("d5fv9BtX");
+        signinBtn.click();
+    }
+    public void loginLibrarian(){
+        emailInput.sendKeys("librarian1@library");
+        passwordInput.sendKeys("qU9mrvur");
+        signinBtn.click();
+    }
+
 
 
 }
