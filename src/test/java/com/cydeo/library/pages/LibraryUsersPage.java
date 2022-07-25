@@ -66,6 +66,5 @@ public class LibraryUsersPage {
         startDate.sendKeys("2022-" + faker.number().numberBetween(1,6)+"-"+faker.number().numberBetween(1,30));
         endDate.sendKeys("2022-" + faker.number().numberBetween(7,12)+"-"+faker.number().numberBetween(1,30));
         address.sendKeys(faker.address().fullAddress());
-        saveChanges.click();
     }
 }

@@ -23,4 +23,13 @@ public class BasePage {
     @FindBy(xpath = "//a[@id='navbarDropdown']/span")
     public WebElement userNameLink;
 
+    @FindBy(xpath = "//h2[@id='user_count']")
+    public WebElement userCount;
+
+    @FindBy (xpath = "//h2[@id='book_count']")
+    public WebElement bookCount;
+
+    @FindBy (xpath = "//h2[@id='borrowed_books']")
+    public WebElement borrowedBookCount;
+
 }

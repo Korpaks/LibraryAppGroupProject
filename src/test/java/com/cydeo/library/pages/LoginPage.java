@@ -29,11 +29,13 @@ public class LoginPage {
     }
 
     public void loginStudent(){
+        Driver.getDriver().get(ConfigurationReader.getProperty("env"));
         emailInput.sendKeys("student1@library");
         passwordInput.sendKeys("d5fv9BtX");
         signinBtn.click();
     }
     public void loginLibrarian(){
+        Driver.getDriver().get(ConfigurationReader.getProperty("env"));
         emailInput.sendKeys("librarian1@library");
         passwordInput.sendKeys("qU9mrvur");
         signinBtn.click();
