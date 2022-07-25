@@ -29,5 +29,16 @@ public class BooksModule {
     @FindBy(xpath = "//input[@name='author']")
     public WebElement addAuthor_input;
 
+    @FindBy(id = "book_group_id")
+    public WebElement addBookCategory_dropdown;
+
+    @FindBy(id = "description")
+    public WebElement bookDescription_input;
+
+    @FindBy(xpath = "//button[@type='submit']")
+    public WebElement submitBookBtn;
+
+
+
 
 }

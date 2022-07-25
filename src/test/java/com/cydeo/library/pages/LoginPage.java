@@ -21,12 +21,12 @@ public class LoginPage {
     @FindBy(xpath = "//button")
     public WebElement signinBtn;
 
-    public void loginToPage(String url, String username, String password){
-        Driver.getDriver().get(ConfigurationReader.getProperty(url));
-        emailInput.sendKeys(username);
-        passwordInput.sendKeys(password);
-        signinBtn.click();
-    }
+//    public void loginToPage(){
+//        Driver.getDriver().get(ConfigurationReader.getProperty("url"));
+//        emailInput.sendKeys("librarian3@library");
+//        passwordInput.sendKeys("Bqq9Ru0W");
+//        signinBtn.click();
+//    }
 
     public void loginStudent(){
         Driver.getDriver().get(ConfigurationReader.getProperty("env"));
