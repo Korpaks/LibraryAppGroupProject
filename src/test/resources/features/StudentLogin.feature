@@ -6,7 +6,7 @@ Feature: student login functionality
 
   Scenario: login for student
     Given user is on login page
-    Then verify that the URL is "https://library2.cybertekschool/login.html"
+    And verify that the URL is "https://library2.cybertekschool/login.html"
     When student enters valid email address and password
     And student click sing in butt
     Then verify that there are 2 models on the page
