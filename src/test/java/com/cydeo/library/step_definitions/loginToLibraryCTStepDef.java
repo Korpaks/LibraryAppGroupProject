@@ -7,7 +7,6 @@ import io.cucumber.java.en.When;
 public class loginToLibraryCTStepDef
 {
 
-
     @Given("user is on the loginPage")
     public void user_is_on_the_login_page()
     {
