@@ -3,6 +3,7 @@ package com.cydeo.library.step_definitions;
 import com.cydeo.library.pages.BasePage;
 import com.cydeo.library.pages.BooksModule;
 import com.cydeo.library.pages.LoginPage;
+import com.cydeo.library.utilities.ConfigurationReader;
 import com.cydeo.library.utilities.Driver;
 import com.github.javafaker.Faker;
 import io.cucumber.java.en.Given;
@@ -23,7 +24,10 @@ public class NewBookFunction_StepDef {
 
     @Given("librarian is on the Home Page")
     public void librarian_is_on_the_home_page() {
-        loginPage.loginToPage("env","librarian_username","librarian_password");
+        Driver.getDriver().get(ConfigurationReader.getProperty("url"));
+        loginPage.emailInput.sendKeys("librarian3@library");
+        loginPage.passwordInput.sendKeys("Bqq9Ru0W");
+        loginPage.signinBtn.click();
     }
     @When("librarian clicks on Books module")
     public void librarian_clicks_on_books_module() {
@@ -40,7 +44,7 @@ public class NewBookFunction_StepDef {
         booksModule.addIsbn_input.sendKeys(faker.code().imei());
         booksModule.addYear_input.sendKeys("1805");
         booksModule.addAuthor_input.sendKeys(faker.book().author());
-        Select select = new Select(booksModule.addBookCategory_dropdown);
+        Select select = new Select(Driver.getDriver().findElement(By.id("book_group_id")));
         select.deselectByVisibleText("Science Fiction");
         booksModule.bookDescription_input.sendKeys(faker.shakespeare().hamletQuote());
     }
