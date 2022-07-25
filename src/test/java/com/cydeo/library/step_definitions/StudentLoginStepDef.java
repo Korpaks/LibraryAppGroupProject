@@ -32,7 +32,8 @@ public class StudentLoginStepDef {
 
     @When("student enters valid email address and password")
     public void student_enters_valid_email_address_and_password() {
-        loginPage.loginStudent();
+        loginPage.emailInput.sendKeys("librarian1@library");
+        loginPage.passwordInput.sendKeys("qU9mrvur");
     }
 
     @When("student click sing in butt")
