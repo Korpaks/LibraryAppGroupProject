@@ -4,6 +4,7 @@ import com.cydeo.library.pages.BasePage;
 import com.cydeo.library.pages.LoginPage;
 import com.cydeo.library.utilities.ConfigurationReader;
 import com.cydeo.library.utilities.Driver;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -25,7 +26,7 @@ public class StudentLoginStepDef {
         Driver.getDriver().get(ConfigurationReader.getProperty("env"));
     }
 
-    @Then("verify that the URL is {string}")
+    @And("verify that the URL is {string}")
     public void verify_that_the_url_is(String url) {
     Assert.assertEquals(url, Driver.getDriver().getCurrentUrl());
     }
