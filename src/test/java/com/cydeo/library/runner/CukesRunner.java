@@ -14,8 +14,8 @@ import org.junit.runner.RunWith;
                 "json:target/cucumber-report.json"
         },
         features = "src/test/resources/features",
-        glue = "com/cydeo/library/step_definitions",
-        dryRun = false,
+        glue = "src/test/java/com/cydeo/library/step_definitions",
+        dryRun = true,
         tags = "@wip"
 )
 
