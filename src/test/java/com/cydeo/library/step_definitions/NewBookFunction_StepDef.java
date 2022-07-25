@@ -1,5 +1,6 @@
 package com.cydeo.library.step_definitions;
 
+import com.cydeo.library.pages.BasePage;
 import com.cydeo.library.pages.BooksModule;
 import com.cydeo.library.pages.LoginPage;
 import io.cucumber.java.en.Given;
@@ -10,6 +11,7 @@ public class NewBookFunction_StepDef {
 
     LoginPage loginPage = new LoginPage();
     BooksModule booksModule = new BooksModule();
+    BasePage basePage = new BasePage();
 
 
     @Given("librarian is on the Home Page")
@@ -18,7 +20,7 @@ public class NewBookFunction_StepDef {
     }
     @When("librarian clicks on Books module")
     public void librarian_clicks_on_books_module() {
-        loginPage.booksLink.click();
+        basePage.booksLink.click();
     }
     @When("librarian click +Add Book button")
     public void librarian_click_button() {
