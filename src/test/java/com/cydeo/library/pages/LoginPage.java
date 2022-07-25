@@ -20,6 +20,17 @@ public class LoginPage {
     @FindBy(xpath = "//button")
     public WebElement signinBtn;
 
+    public void loginStudent(){
+        emailInput.sendKeys("student1@library");
+        passwordInput.sendKeys("d5fv9BtX");
+        signinBtn.click();
+    }
+    public void loginLibrarian(){
+        emailInput.sendKeys("librarian1@library");
+        passwordInput.sendKeys("qU9mrvur");
+        signinBtn.click();
+    }
+
 
 
 }
