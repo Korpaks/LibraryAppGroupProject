@@ -28,7 +28,7 @@ public class StudentLoginStepDef {
 
     @And("verify that the URL is {string}")
     public void verify_that_the_url_is(String url) {
-    Assert.assertEquals(url, Driver.getDriver().getCurrentUrl());
+            Assert.assertEquals(url, Driver.getDriver().getCurrentUrl());
     }
 
     @When("student enters valid email address and password")
