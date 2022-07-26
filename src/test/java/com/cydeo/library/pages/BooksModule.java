@@ -14,8 +14,8 @@ public class BooksModule {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
-    @FindBy(linkText = "tpl/add-book.html")
-    public WebElement addNewBookLink;
+    @FindBy(css = ".portlet-title [data-target]")
+    public WebElement addBooks;
 
     @FindBy(xpath = "//input[@name='name']")
     public WebElement addBookName_input;

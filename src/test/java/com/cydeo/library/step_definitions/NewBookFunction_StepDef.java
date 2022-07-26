@@ -24,10 +24,7 @@ public class NewBookFunction_StepDef {
 
     @Given("librarian is on the Home Page")
     public void librarian_is_on_the_home_page() {
-        Driver.getDriver().get(ConfigurationReader.getProperty("url"));
-        loginPage.emailInput.sendKeys("librarian3@library");
-        loginPage.passwordInput.sendKeys("Bqq9Ru0W");
-        loginPage.signinBtn.click();
+        loginPage.loginLibrarian();
     }
     @When("librarian clicks on Books module")
     public void librarian_clicks_on_books_module() {
