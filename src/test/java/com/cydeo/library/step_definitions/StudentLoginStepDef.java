@@ -33,8 +33,8 @@ public class StudentLoginStepDef {
 
     @When("student enters valid email address and password")
     public void student_enters_valid_email_address_and_password() {
-        loginPage.emailInput.sendKeys("librarian1@library");
-        loginPage.passwordInput.sendKeys("qU9mrvur");
+        loginPage.emailInput.sendKeys("student1@library");
+        loginPage.passwordInput.sendKeys("d5fv9BtX");
     }
 
     @When("student click sing in butt")
@@ -44,6 +44,7 @@ public class StudentLoginStepDef {
 
     @Then("verify that there are {int} models on the page")
     public void verify_that_there_are_models_on_the_page(Integer numberOfModules) {
+
         wait.until(ExpectedConditions.visibilityOf(basePage.booksLink));
         wait.until(ExpectedConditions.visibilityOf(basePage.borrowedBookCount));
         Assert.assertEquals((int) numberOfModules, basePage.studentModuleNum.size());
