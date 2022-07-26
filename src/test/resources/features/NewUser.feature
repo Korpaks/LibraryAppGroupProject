@@ -1,7 +1,7 @@
+@igor @B26G5-69
 Feature: adding new user functionality
-
   User Story: As a librarian, I should be able to add a new user
-  @igor @B26G5-69
+
   Scenario: Verify librarian can add user
 
     Given librarian is on the home page
