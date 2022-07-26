@@ -3,7 +3,7 @@ Feature: student login functionality
 
   User Story:
   As a user, I should be able to login to LibraryCT
-
+  @dusan
   Scenario: login for student
     Given user is on login page
     And verify that the URL is "https://library2.cydeo.com/login.html"

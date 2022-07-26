@@ -2,6 +2,7 @@ package com.cydeo.library.step_definitions;
 
 import com.cydeo.library.pages.BasePage;
 import com.cydeo.library.pages.LoginPage;
+import com.cydeo.library.utilities.BrowserUtils;
 import com.cydeo.library.utilities.ConfigurationReader;
 import com.cydeo.library.utilities.Driver;
 import io.cucumber.java.en.And;
@@ -44,10 +45,29 @@ public class StudentLoginStepDef {
 
     @Then("verify that there are {int} models on the page")
     public void verify_that_there_are_models_on_the_page(Integer numberOfModules) {
-        wait.until(ExpectedConditions.visibilityOf(basePage.booksLink));
-        wait.until(ExpectedConditions.visibilityOf(basePage.borrowedBooks));
+        BrowserUtils.waitFor(1);
         Assert.assertEquals((int) numberOfModules, basePage.studentModuleNum.size());
     }
 
+    @Given("librarian login page")
+    public void librarianLoginPage() {
+        Driver.getDriver().get(ConfigurationReader.getProperty("env"));
+    }
 
+    @Then("verify that the title is {string}")
+    public void verifyThatTheTitleIs(String title) {
+        wait.until(ExpectedConditions.titleIs(title));
+        Assert.assertEquals("Title not equal", title, Driver.getDriver().getTitle());
+    }
+
+    @When("librarian enters valid email and password")
+    public void librarianEntersValidEmailAndPassword() {
+        loginPage.emailInput.sendKeys("librarian1@library");
+        loginPage.passwordInput.sendKeys("qU9mrvur");
+    }
+
+    @And("librarian clicks sign in button")
+    public void librarianClicksSignInButton() {
+        loginPage.signinBtn.click();
+    }
 }

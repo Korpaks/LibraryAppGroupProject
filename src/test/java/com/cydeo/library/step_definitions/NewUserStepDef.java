@@ -16,8 +16,8 @@ public class NewUserStepDef {
     BasePage base = new BasePage();
     int numberOfUsers;
 
-    @Given("libraian is on the home page")
-    public void libraian_is_on_the_home_page() {
+    @Given("librarian is on the home page")
+    public void librarian_is_on_the_home_page() {
         login.loginLibrarian();
         BrowserUtils.waitForVisibilityOf(base.userCount);
         BrowserUtils.waitFor(1);
