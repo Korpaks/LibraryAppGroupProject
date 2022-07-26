@@ -2,6 +2,7 @@ package com.cydeo.library.step_definitions;
 
 import com.cydeo.library.pages.BasePage;
 import com.cydeo.library.pages.LoginPage;
+import com.cydeo.library.utilities.BrowserUtils;
 import com.cydeo.library.utilities.ConfigurationReader;
 import com.cydeo.library.utilities.Driver;
 import io.cucumber.java.en.And;
@@ -28,14 +29,9 @@ public class StudentLoginStepDef {
 
     @And("verify that the URL is {string}")
     public void verify_that_the_url_is(String url) {
-    Assert.assertEquals(url, Driver.getDriver().getCurrentUrl());
+            Assert.assertEquals(url, Driver.getDriver().getCurrentUrl());
     }
 
-    @When("student enters valid email address and password")
-    public void student_enters_valid_email_address_and_password() {
-        loginPage.emailInput.sendKeys("student1@library");
-        loginPage.passwordInput.sendKeys("d5fv9BtX");
-    }
 
     @When("student click sing in butt")
     public void student_click_sing_in_butt() {
@@ -44,11 +40,37 @@ public class StudentLoginStepDef {
 
     @Then("verify that there are {int} models on the page")
     public void verify_that_there_are_models_on_the_page(Integer numberOfModules) {
-
-        wait.until(ExpectedConditions.visibilityOf(basePage.booksLink));
-        wait.until(ExpectedConditions.visibilityOf(basePage.borrowedBookCount));
+        BrowserUtils.waitFor(1);
         Assert.assertEquals((int) numberOfModules, basePage.studentModuleNum.size());
     }
 
+    @Given("librarian login page")
+    public void librarianLoginPage() {
+        Driver.getDriver().get(ConfigurationReader.getProperty("env"));
+    }
 
+    @Then("verify that the title is {string}")
+    public void verifyThatTheTitleIs(String title) {
+        wait.until(ExpectedConditions.titleIs(title));
+        Assert.assertEquals("Title not equal", title, Driver.getDriver().getTitle());
+    }
+
+
+
+    @And("librarian clicks sign in button")
+    public void librarianClicksSignInButton() {
+        loginPage.signinBtn.click();
+    }
+
+    @When("student enters valid {string} address and {string}")
+    public void studentEntersValidAddressAnd(String email, String password) {
+        loginPage.emailInput.sendKeys(email);
+        loginPage.passwordInput.sendKeys(password);
+    }
+
+    @When("librarian enters valid {string} and {string}")
+    public void librarianEntersValidAnd(String email, String password) {
+        loginPage.emailInput.sendKeys(email);
+        loginPage.passwordInput.sendKeys(password);
+    }
 }

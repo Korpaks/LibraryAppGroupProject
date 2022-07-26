@@ -54,7 +54,7 @@ public class LibraryUsersPage {
 
     Faker faker = new Faker();
     public void inputNewUser (){
-        addUsers.click();
+
         BrowserUtils.waitForVisibilityOf(fullName);
         fullName.sendKeys(faker.name().fullName());
         email.sendKeys(faker.internet().emailAddress());

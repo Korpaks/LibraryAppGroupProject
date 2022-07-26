@@ -14,9 +14,9 @@ import org.junit.runner.RunWith;
                 "json:target/cucumber-report.json"
         },
         features = "src/test/resources/features",
-        glue = "src/test/java/com/cydeo/library/step_definitions",
+        glue = "com/cydeo/library/step_definitions",
         dryRun = false,
-        tags = "@igor"
+        tags = "@igor and @librarian"
 )
 
 public class CukesRunner {

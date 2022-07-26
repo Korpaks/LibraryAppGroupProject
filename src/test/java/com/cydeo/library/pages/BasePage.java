@@ -34,7 +34,10 @@ public class BasePage {
     @FindBy (xpath = "//h2[@id='borrowed_books']")
     public WebElement borrowedBookCount;
 
-    @FindBy (id = "menu_item")
+    @FindBy (xpath = "//ul[@id='menu_item']/li")
     public List<WebElement> studentModuleNum;
+
+    @FindBy(xpath = "//span[.='Borrowing Books']")
+    public WebElement borrowedBooks;
 
 }

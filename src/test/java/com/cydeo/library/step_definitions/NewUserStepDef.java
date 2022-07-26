@@ -16,12 +16,13 @@ public class NewUserStepDef {
     BasePage base = new BasePage();
     int numberOfUsers;
 
-    @Given("libraian is on the home page")
-    public void libraian_is_on_the_home_page() {
+    @Given("librarian is on the home page")
+    public void librarian_is_on_the_home_page() {
+        login.loginLibrarian();
         BrowserUtils.waitForVisibilityOf(base.userCount);
+        BrowserUtils.waitFor(1);
         numberOfUsers = Integer.parseInt(base.userCount.getText());
         System.out.println(base.userCount.getText());
-        login.loginLibrarian();
     }
     @When("librarian click User module")
     public void librarian_click_user_module() {
@@ -31,8 +32,6 @@ public class NewUserStepDef {
     }
     @When("librarian click Add User button")
     public void librarian_click_add_user_button() {
-        BrowserUtils.waitForVisibilityOf(users.addUsers);
-        BrowserUtils.waitForClickablility(users.addUsers, 10);
         users.addUsers.click();
     }
     @When("librarian fills out the user information")
@@ -49,7 +48,7 @@ public class NewUserStepDef {
         Assert.assertTrue(users.confirmedMessageForNewUser.isDisplayed());
         base.dashboardLink.click();
         BrowserUtils.waitForVisibilityOf(base.userCount);
-
+        BrowserUtils.waitFor(1);
         Assert.assertEquals("Number of users not equal", numberOfUsers+1, Integer.parseInt(base.userCount.getText()));
 
     }
