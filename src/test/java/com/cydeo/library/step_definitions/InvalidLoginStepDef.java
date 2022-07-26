@@ -4,7 +4,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-public class loginToLibraryCTStepDef
+public class InvalidLoginStepDef
 {
 
     @Given("user is on the loginPage")
