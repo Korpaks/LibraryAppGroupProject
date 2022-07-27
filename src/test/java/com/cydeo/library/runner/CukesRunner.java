@@ -19,5 +19,7 @@ import org.junit.runner.RunWith;
         tags = "@igor and @librarian"
 )
 
-public class CukesRunner {
+public class CukesRunner
+{
+
 }
