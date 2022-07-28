@@ -14,8 +14,13 @@ public class BooksModule {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
+
+    @FindBy(xpath = "//i[@class='fa fa-plus']")
+    public WebElement addNewBookLink;
+    
     @FindBy(css = ".portlet-title [data-target]")
     public WebElement addBooks;
+
 
     @FindBy(xpath = "//input[@name='name']")
     public WebElement addBookName_input;
@@ -38,6 +43,11 @@ public class BooksModule {
     @FindBy(xpath = "//button[@type='submit']")
     public WebElement submitBookBtn;
 
+    @FindBy(id = "book_categories")
+    public WebElement bookCategory_dropdown;
+
+    @FindBy(xpath = "//input[@type='search']")
+    public WebElement searchInput;
 
 
 
