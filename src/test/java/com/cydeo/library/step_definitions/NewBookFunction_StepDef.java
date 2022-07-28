@@ -28,10 +28,8 @@ public class NewBookFunction_StepDef {
 
     @Given("librarian is on the Home Page")
     public void librarian_is_on_the_home_page() {
-        Driver.getDriver().get(ConfigurationReader.getProperty("env"));
-        loginPage.emailInput.sendKeys("librarian1@library");
-        loginPage.passwordInput.sendKeys("qU9mrvur");
-        loginPage.signinBtn.click();
+        loginPage.loginLibrarian();
+
     }
     @When("librarian clicks on Books module")
     public void librarian_clicks_on_books_module() {
@@ -39,7 +37,7 @@ public class NewBookFunction_StepDef {
     }
     @When("librarian click +Add Book button")
     public void librarian_click_button() {
-        booksModule.addNewBookLink.click();
+        booksModule.addBooks.click();
     }
     @When("librarian enters BookName, ISBN, Year, Author, and Description")
     public void librarian_enters_book_name_isbn_year_author_and_description() {
