@@ -1,5 +1,6 @@
 package com.cydeo.library.step_definitions;
 
+import com.cydeo.library.utilities.ConfigurationReader;
 import com.cydeo.library.utilities.DBUtilities;
 import com.cydeo.library.utilities.Driver;
 import io.cucumber.java.After;
@@ -30,7 +31,7 @@ public class Hooks {
 
     @Before("@db")
     public void setupDB(){
-        DBUtilities.createConnection();
+        DBUtilities.createConnection(ConfigurationReader.getProperty("library2.db.url"), );
         System.out.println("CONNECTION IS SUCCESSFUL");
     }
 
