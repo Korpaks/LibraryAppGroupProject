@@ -1,5 +1,6 @@
 package com.cydeo.library.step_definitions;
 
+import com.cydeo.library.utilities.DBUtilities;
 import com.cydeo.library.utilities.Driver;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
@@ -25,5 +26,17 @@ public class Hooks {
             scenario.attach(screenShot, "image/png", scenario.getName());
         }
         Driver.closeDriver();
+    }
+
+    @Before("@db")
+    public void setupDB(){
+        DBUtilities.createConnection();
+        System.out.println("CONNECTION IS SUCCESSFUL");
+    }
+
+    @After("@db")
+    public void destroyDB(){
+        DBUtilities.destroy();
+        System.out.println("CONNECTION IS DESTROYED");
     }
 }
