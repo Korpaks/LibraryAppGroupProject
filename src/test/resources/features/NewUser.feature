@@ -1,4 +1,4 @@
-@igor @B26G5-69
+@igor  @newUser @B26G5-69
 Feature: adding new user functionality
   User Story: As a librarian, I should be able to add a new user
 

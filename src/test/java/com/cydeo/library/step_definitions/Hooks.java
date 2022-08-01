@@ -12,7 +12,8 @@ public class Hooks {
     @Before
     public void setup(){
         System.out.println("Before Scenario is running");
-        //Driver.getDriver().get("https://library2.cydeo.com/login.html");
+        //Here we can setup if scenario has tag name @firefox or @chrome it will check that and it till do test on given browser
+
     }
 
     @After
