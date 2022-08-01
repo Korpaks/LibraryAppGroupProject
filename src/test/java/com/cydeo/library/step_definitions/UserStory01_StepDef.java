@@ -12,6 +12,7 @@ import java.util.List;
 public class UserStory01_StepDef {
 
     List<Integer> userIds;
+    List<String> columnNames;
 
 
     @Given("Establish the database connection")
@@ -39,11 +40,14 @@ public class UserStory01_StepDef {
 
     @When("Execute query to get all columns")
     public void execute_query_to_get_all_columns() {
-
+    DBUtilities.runQuery("select * from users");
+    columnNames = DBUtilities.getAllColumnNamesAsList();
+    // we are getting all the column names from DB into the List
     }
 
     @Then("verify the below columns are listed in result")
-    public void verify_the_below_columns_are_listed_in_result() {
-
+    public void verify_the_below_columns_are_listed_in_result(List<String> columnNamesScenario) {
+        Assertions.assertEquals(columnNames, columnNamesScenario);
+        //asserting 2 array lists
     }
 }
