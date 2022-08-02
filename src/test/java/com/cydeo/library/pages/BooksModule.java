@@ -49,4 +49,10 @@ public class BooksModule{
     @FindBy(xpath = "//td[1]")
     public WebElement editBook;
 
+    @FindBy(xpath = "//div[.='The book has been created.']")
+    public WebElement bookHasBeenAddedMessage;
+
+    @FindBy(xpath = "//td[1]")
+    public WebElement borrowFirstSearchBook;
+
 }

@@ -17,12 +17,13 @@ public class UserStory02_StepDef {
     BasePage base = new BasePage();
     String borrowedBooksNumber;
 
-    @Given("the {string} on the home page")
+    @Given("the librarian on the home page")
     public void the_on_the_home_page(String librarian) {
-        Driver.getDriver().get(ConfigurationReader.getProperty("env"));
-     login.emailInput.sendKeys(librarian+"1@library");
-     login.passwordInput.sendKeys("qU9mrvur");
-     login.signinBtn.click();
+//        Driver.getDriver().get(ConfigurationReader.getProperty("env"));
+//     login.emailInput.sendKeys(librarian+"1@library");
+//     login.passwordInput.sendKeys("qU9mrvur");
+//     login.signinBtn.click();
+        login.loginLibrarian();
     }
 
     @When("the librarian gets borrowed books number")

@@ -35,8 +35,8 @@ public class LoginPage {
 
     public void loginStudent(){
         Driver.getDriver().get(ConfigurationReader.getProperty("env"));
-        emailInput.sendKeys("student1@library");
-        passwordInput.sendKeys("d5fv9BtX");
+        emailInput.sendKeys("student2@library");
+        passwordInput.sendKeys("zyxa10vg");
         signinBtn.click();
     }
     public void loginLibrarian(){
