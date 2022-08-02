@@ -3,7 +3,6 @@ package com.cydeo.library.pages;
 import com.cydeo.library.utilities.ConfigurationReader;
 import com.cydeo.library.utilities.Driver;
 import com.github.javafaker.Faker;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -35,8 +34,8 @@ public class LoginPage {
 
     public void loginStudent(){
         Driver.getDriver().get(ConfigurationReader.getProperty("env"));
-        emailInput.sendKeys("student1@library");
-        passwordInput.sendKeys("d5fv9BtX");
+        emailInput.sendKeys("student2@library");
+        passwordInput.sendKeys("zyxa10vg");
         signinBtn.click();
     }
     public void loginLibrarian(){

@@ -18,7 +18,6 @@ public class BooksModule{
     @FindBy(css = ".portlet-title [data-target]")
     public WebElement addBooks;
 
-
     @FindBy(xpath = "//input[@name='name']")
     public WebElement addBookName_input;
 
@@ -48,5 +47,11 @@ public class BooksModule{
 
     @FindBy(xpath = "//td[1]")
     public WebElement editBook;
+
+    @FindBy(xpath = "//div[.='The book has been created.']")
+    public WebElement bookHasBeenAddedMessage;
+
+    @FindBy (xpath = "//td[1]")
+    public WebElement borrowFirstSearchedBook;
 
 }
