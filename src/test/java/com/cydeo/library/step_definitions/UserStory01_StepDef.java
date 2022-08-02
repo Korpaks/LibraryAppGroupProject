@@ -11,7 +11,7 @@ import java.util.List;
 
 public class UserStory01_StepDef {
 
-    List<Integer> userIds;
+    List<String> userIds;
     List<String> columnNames;
 
 

@@ -19,7 +19,7 @@ public class BasePage {
     @FindBy(xpath="//span[.='Users']")
     public WebElement usersLink;
 
-    @FindBy(xpath="//i[@class='fa fa-book']")
+    @FindBy(xpath="//span[.='Books']")
     public WebElement booksLink;
 
     @FindBy(xpath = "//a[@id='navbarDropdown']/span")

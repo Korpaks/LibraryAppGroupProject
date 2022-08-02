@@ -260,15 +260,15 @@ public class DBUtilities {
      * @param columnNum column number to get all data
      * @return List object that contains all rows of that column
      */
-    public static List<Integer> getColumnDataAsList(int columnNum){
+    public static List<String> getColumnDataAsList(int columnNum){
 
-        List<Integer> columnDataLst = new ArrayList<>();
+        List<String> columnDataLst = new ArrayList<>();
 
         try {
             rs.beforeFirst(); // make sure the cursor is at before first location
             while( rs.next() ){
 
-                Integer cellValue = Integer.valueOf(rs.getString(columnNum));
+                String cellValue =rs.getString(columnNum);
                 columnDataLst.add(cellValue) ;
             }
 
