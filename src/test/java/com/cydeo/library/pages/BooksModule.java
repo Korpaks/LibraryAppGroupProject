@@ -46,6 +46,7 @@ public class BooksModule{
     @FindBy(xpath = "//input[@type='search']")
     public WebElement searchInput;
 
-
+    @FindBy(xpath = "//td[1]")
+    public WebElement editBook;
 
 }
