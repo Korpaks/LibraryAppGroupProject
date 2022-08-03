@@ -31,7 +31,7 @@ public class Hooks {
 
     @Before("@db")
     public void setupDB(){
-        DBUtilities.createConnection(ConfigurationReader.getProperty("library2.db.url"), );
+        DBUtilities.createConnection(ConfigurationReader.getProperty("library2.db.url"), ConfigurationReader.getProperty("library2.db.username"),ConfigurationReader.getProperty("library2.db.password") );
         System.out.println("CONNECTION IS SUCCESSFUL");
     }
 

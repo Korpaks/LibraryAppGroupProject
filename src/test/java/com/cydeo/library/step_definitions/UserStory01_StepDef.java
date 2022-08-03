@@ -9,6 +9,7 @@ public class UserStory01_StepDef {
 
     @Given("Establish the database connection")
     public void establish_the_database_connection() {
+        // this part is already defined in hooks class
 
     }
     @When("Execute query to get all IDs from users")

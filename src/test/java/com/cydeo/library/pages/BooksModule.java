@@ -1,12 +1,9 @@
 package com.cydeo.library.pages;
 
 import com.cydeo.library.utilities.Driver;
-import org.junit.Assert;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.Select;
 
 public class BooksModule {
 
@@ -49,6 +46,13 @@ public class BooksModule {
     @FindBy(xpath = "//input[@type='search']")
     public WebElement searchInput;
 
+    @FindBy(xpath = "//tr/td[1]")
+    public WebElement firstRowFirstTable;
 
+    @FindBy(xpath = "//tr/td[1]")
+    public WebElement firstRowLastTable;
+
+    @FindBy(xpath = "//div[@class='toast-message']")
+    public WebElement notificationText;
 
 }
