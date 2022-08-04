@@ -1,6 +1,5 @@
 package com.cydeo.library.step_definitions;
 
-import com.cydeo.library.pages.BasePage;
 import com.cydeo.library.pages.BooksModule;
 import com.cydeo.library.pages.LoginPage;
 import com.cydeo.library.utilities.BrowserUtils;
@@ -20,7 +19,7 @@ public class UserStory07_StepDef {
     String dateBorrowed;
     LoginPage login = new LoginPage();
     BooksModule books = new BooksModule();
-    BasePage base = new BasePage();
+
     List<WebElement> tableRows;
 
     @Given("the student on the home page")
@@ -43,7 +42,7 @@ public class UserStory07_StepDef {
 
     @Then("verify that book is shown in {string} page")
     public void verify_that_book_is_shown_in_page(String borrowingBooks) {
-        base.borrowedBooks.click();
+        books.borrowedBooks.click();
         BrowserUtils.waitFor(3);
         tableRows = Driver.getDriver().findElements(By.xpath("//tr")); // finding elements for each table row because it is dinamic, each table row is created when we borrow book
         int tableRawData = tableRows.size()-1; // setting up my index for finding the specific data at this specifi row

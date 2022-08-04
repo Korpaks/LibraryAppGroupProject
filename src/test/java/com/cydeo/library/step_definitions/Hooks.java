@@ -14,8 +14,8 @@ public class Hooks {
     @Before
     public void setup(){
         System.out.println("Before Scenario is running");
-        //Here we can setup if scenario has tag name @firefox or @chrome it will check that and it till do test on given browser
-
+        //Here we can set up if scenario has tag name @firefox or @chrome it will check that and it till do test on given browser
+        //Here we can also call Driver.getDriver().get() url of the application that w are working on
     }
 
     @After

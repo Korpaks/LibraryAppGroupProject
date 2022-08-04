@@ -1,29 +1,21 @@
 package com.cydeo.library.step_definitions;
 
-import com.cydeo.library.pages.BasePage;
 import com.cydeo.library.pages.BooksModule;
 import com.cydeo.library.pages.LoginPage;
 import com.cydeo.library.utilities.BrowserUtils;
-import com.cydeo.library.utilities.ConfigurationReader;
 import com.cydeo.library.utilities.Driver;
-import com.github.javafaker.Faker;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import io.cucumber.java.eo.Se;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.Wait;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.util.concurrent.TimeUnit;
 
 public class NewBookFunction_StepDef {
 
     LoginPage loginPage = new LoginPage();
     BooksModule booksModule = new BooksModule();
-    BasePage basePage = new BasePage();
+
 
 
     @Given("librarian is on the Home Page")
@@ -33,7 +25,7 @@ public class NewBookFunction_StepDef {
     }
     @When("librarian clicks on Books module")
     public void librarian_clicks_on_books_module() {
-        basePage.booksLink.click();
+        loginPage.booksLink.click();
     }
     @When("librarian click +Add Book button")
     public void librarian_click_button() {

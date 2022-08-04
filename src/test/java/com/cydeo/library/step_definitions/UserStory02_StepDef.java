@@ -1,6 +1,5 @@
 package com.cydeo.library.step_definitions;
 
-import com.cydeo.library.pages.BasePage;
 import com.cydeo.library.pages.LoginPage;
 import com.cydeo.library.utilities.BrowserUtils;
 import com.cydeo.library.utilities.DBUtilities;
@@ -12,7 +11,7 @@ import org.junit.jupiter.api.Assertions;
 public class UserStory02_StepDef {
 
     LoginPage login = new LoginPage();
-    BasePage base = new BasePage();
+
     String borrowedBooksNumber;
 
     @Given("the librarian on the home page")
@@ -22,8 +21,8 @@ public class UserStory02_StepDef {
 
     @When("the librarian gets borrowed books number")
     public void the_librarian_gets_borrowed_books_number() {
-        BrowserUtils.waitForVisibilityOf(base.borrowedBookCount);
-    borrowedBooksNumber = base.borrowedBookCount.getText();
+        BrowserUtils.waitForVisibilityOf(login.borrowedBookCount);
+    borrowedBooksNumber = login.borrowedBookCount.getText();
     }
 
     @Then("borrowed books number information must match with DB")

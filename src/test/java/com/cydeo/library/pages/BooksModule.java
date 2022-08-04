@@ -5,7 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class BooksModule{
+public class BooksModule extends BasePage{
 
     public BooksModule() {
         PageFactory.initElements(Driver.getDriver(), this);

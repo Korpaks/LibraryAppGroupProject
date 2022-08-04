@@ -1,6 +1,5 @@
 package com.cydeo.library.step_definitions;
 
-import com.cydeo.library.pages.BasePage;
 import com.cydeo.library.pages.LoginPage;
 import com.cydeo.library.utilities.BrowserUtils;
 import com.cydeo.library.utilities.ConfigurationReader;
@@ -10,15 +9,13 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
-import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class StudentLoginStepDef {
 
     LoginPage loginPage = new LoginPage();
-    BasePage basePage = new BasePage();
+
     WebDriverWait wait = new WebDriverWait(Driver.getDriver(),10);
 
 
@@ -41,7 +38,7 @@ public class StudentLoginStepDef {
     @Then("verify that there are {int} models on the page")
     public void verify_that_there_are_models_on_the_page(Integer numberOfModules) {
         BrowserUtils.waitFor(1);
-        Assert.assertEquals((int) numberOfModules, basePage.studentModuleNum.size());
+        Assert.assertEquals((int) numberOfModules, loginPage.studentModuleNum.size());
     }
 
     @Given("librarian login page")
