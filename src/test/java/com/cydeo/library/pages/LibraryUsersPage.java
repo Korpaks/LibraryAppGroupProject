@@ -8,7 +8,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
-public class LibraryUsersPage {
+public class LibraryUsersPage extends BasePage {
 
     public LibraryUsersPage(){
         PageFactory.initElements(Driver.getDriver(), this);

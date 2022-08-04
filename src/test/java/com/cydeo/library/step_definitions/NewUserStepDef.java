@@ -1,6 +1,5 @@
 package com.cydeo.library.step_definitions;
 
-import com.cydeo.library.pages.BasePage;
 import com.cydeo.library.pages.LibraryUsersPage;
 import com.cydeo.library.pages.LoginPage;
 import com.cydeo.library.utilities.BrowserUtils;
@@ -13,16 +12,16 @@ public class NewUserStepDef {
 
     LoginPage login = new LoginPage();
     LibraryUsersPage users = new LibraryUsersPage();
-    BasePage base = new BasePage();
+
     int numberOfUsers;
 
     @Given("librarian is on the home page")
     public void librarian_is_on_the_home_page() {
         login.loginLibrarian();
-        BrowserUtils.waitForVisibilityOf(base.userCount);
+        BrowserUtils.waitForVisibilityOf(users.userCount);
         BrowserUtils.waitFor(1);
-        numberOfUsers = Integer.parseInt(base.userCount.getText());
-        System.out.println(base.userCount.getText());
+        numberOfUsers = Integer.parseInt(users.userCount.getText());
+        System.out.println(users.userCount.getText());
     }
     @When("librarian click User module")
     public void librarian_click_user_module() {
@@ -46,10 +45,10 @@ public class NewUserStepDef {
     public void verify_a_new_user_is_created() {
         BrowserUtils.waitForVisibilityOf(users.confirmedMessageForNewUser);
         Assert.assertTrue(users.confirmedMessageForNewUser.isDisplayed());
-        base.dashboardLink.click();
-        BrowserUtils.waitForVisibilityOf(base.userCount);
+        users.dashboardLink.click();
+        BrowserUtils.waitForVisibilityOf(users.userCount);
         BrowserUtils.waitFor(1);
-        Assert.assertEquals("Number of users not equal", numberOfUsers+1, Integer.parseInt(base.userCount.getText()));
+        Assert.assertEquals("Number of users not equal", numberOfUsers+1, Integer.parseInt(users.userCount.getText()));
 
     }
 }

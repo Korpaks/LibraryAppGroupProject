@@ -1,20 +1,21 @@
 select * from books;
-select * from users;
 
-select !distinct from users;
+select bc.name, count(*) from book_borrow
+inner join books b on book_borrow.book_id = b.id inner join book_categories bc on b.book_category_id = bc.id group by bc.name order by 2 desc;
 
-select full_name,b.name,bb.borrowed_date from users u
-inner join book_borrow bb on u.id = bb.user_id
-inner join books b on bb.book_id = b.id
-where full_name='Test Student 1' and name='Waiting for the Barbarians'
-and is_returned=0 order by 3 desc ;
+select name, added_date from books order by added_date desc;
 
-select b.name,bb.borrowed_date from users u                             inner join book_borrow bb on u.id = bb.user_id
-                                                  inner join books b on bb.book_id = b.id
-where is_returned=1 and full_name='Test Student 1' and name='Waiting for the Barbarians';
+select * from book_borrow;
 
-select full_name,b.name,bb.borrowed_date from users u
-                                                  inner join book_borrow bb on u.id = bb.user_id
-                                                  inner join books b on bb.book_id = b.id;
+select name, borrowed_date from book_borrow inner join books b on book_borrow.book_id = b.id where borrowed_date= '2022-08-02 19:42:47';
 
-select * from book_borrow bb inner join books b on bb.book_id = b.id;
+
+
+
+
+
+
+
+
+
+

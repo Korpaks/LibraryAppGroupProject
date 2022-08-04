@@ -5,7 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class BooksModule {
+public class BooksModule extends BasePage{
 
     public BooksModule() {
         PageFactory.initElements(Driver.getDriver(), this);
@@ -17,7 +17,6 @@ public class BooksModule {
     
     @FindBy(css = ".portlet-title [data-target]")
     public WebElement addBooks;
-
 
     @FindBy(xpath = "//input[@name='name']")
     public WebElement addBookName_input;
@@ -46,13 +45,13 @@ public class BooksModule {
     @FindBy(xpath = "//input[@type='search']")
     public WebElement searchInput;
 
-    @FindBy(xpath = "//tr/td[1]")
-    public WebElement firstRowFirstTable;
+    @FindBy(xpath = "//td[1]")
+    public WebElement editBook;
 
-    @FindBy(xpath = "//tr/td[1]")
-    public WebElement firstRowLastTable;
+    @FindBy(xpath = "//div[.='The book has been created.']")
+    public WebElement bookHasBeenAddedMessage;
 
-    @FindBy(xpath = "//div[@class='toast-message']")
-    public WebElement notificationText;
+    @FindBy (xpath = "//td[1]")
+    public WebElement borrowFirstSearchedBook;
 
 }

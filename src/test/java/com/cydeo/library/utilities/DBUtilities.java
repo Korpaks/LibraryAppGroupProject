@@ -256,6 +256,7 @@ public class DBUtilities {
 
     /**
      * getting entire column data as list according to column number
+     *
      * @param columnNum column number to get all data
      * @return List object that contains all rows of that column
      */
@@ -267,7 +268,7 @@ public class DBUtilities {
             rs.beforeFirst(); // make sure the cursor is at before first location
             while( rs.next() ){
 
-                String cellValue = rs.getString(columnNum) ;
+                String cellValue =rs.getString(columnNum);
                 columnDataLst.add(cellValue) ;
             }
 
