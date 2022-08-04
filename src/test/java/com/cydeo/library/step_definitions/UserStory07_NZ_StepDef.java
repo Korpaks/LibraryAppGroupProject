@@ -14,7 +14,7 @@ import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 
-public class UserStory07_StepDef {
+public class UserStory07_NZ_StepDef {
 
     LoginPage loginPage = new LoginPage();
     BasePage basePage = new BasePage();
@@ -49,7 +49,8 @@ public class UserStory07_StepDef {
     }
     @Then("verify logged student has same {string} book in database")
     public void verify_logged_student_has_same_book_in_database(String expectedBookName) {
-        String query = "select b.name,bb.borrowed_date from users u                             inner join book_borrow bb on u.id = bb.user_id\n" +
+        String query = "select b.name,bb.borrowed_date from users u                             " +
+                "inner join book_borrow bb on u.id = bb.user_id\n" +
                 "inner join books b on bb.book_id = b.id\n" +
                 "where is_returned=1 and full_name='Test Student 1' " +
                 "and name='"+expectedBookName+"'";
