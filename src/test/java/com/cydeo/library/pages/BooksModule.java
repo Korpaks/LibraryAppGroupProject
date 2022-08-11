@@ -51,7 +51,10 @@ public class BooksModule extends BasePage{
     @FindBy(xpath = "//div[.='The book has been created.']")
     public WebElement bookHasBeenAddedMessage;
 
-    @FindBy (xpath = "//td[1]")
+    @FindBy(xpath = "//div[.='The book has been borrowed...']")
+    public WebElement bookHasBeenBorrowed;
+
+    @FindBy (xpath = "//a[@class='btn btn-primary btn-sm  ']")
     public WebElement borrowFirstSearchedBook;
 
 }

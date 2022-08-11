@@ -25,8 +25,8 @@ public class UserStory07_NZ_StepDef {
     public void the_on_the_home_page(String student) {
         loginPage.loginStudent();
     }
-    @Given("the user navigates to {string} page")
-    public void the_user_navigates_to_page(String books) {
+    @Given("the user navigates to the {string} page")
+    public void the_user_navigates_to_the_page(String arg) {
         basePage.booksLink.click();
     }
     @Given("the user searches book name called {string}")
@@ -36,12 +36,14 @@ public class UserStory07_NZ_StepDef {
     }
     @When("the user clicks Borrow Book")
     public void the_user_clicks_borrow_book() {
-        browserUtils.waitForClickablility(booksModule.firstRowFirstTable,10);
-        booksModule.firstRowFirstTable.click();
+        browserUtils.waitForClickablility(booksModule.borrowFirstSearchedBook,10);
+        BrowserUtils.waitFor(3);
+        booksModule.borrowFirstSearchedBook.click();
     }
     @Then("verify that book is shown in \"Borrowing Books” page")
     public void verify_that_book_is_shown_in_borrowing_books_page() {
-        Assertions.assertTrue(booksModule.notificationText.isDisplayed(),"Book borrowing failed!");
+        Assertions.assertTrue(booksModule.bookHasBeenBorrowed.isDisplayed(),"Book borrowing failed!");
+        BrowserUtils.waitFor(3);
         basePage.borrowedBooks.click();
         String expectedBorrowedBookText = "NOT RETURNED";
         String actualBorrowedBookText = Driver.getDriver().findElement(By.xpath("(//td[.='Waiting for the Barbarians'])[last()]/following-sibling::td[4]")).getText();
